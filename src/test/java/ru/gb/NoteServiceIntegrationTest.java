@@ -15,15 +15,19 @@ import static org.junit.Assert.assertTrue;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class NoteServiceIntegrationTest {
+
     @Autowired
     private NoteService noteService;
+
     @Autowired
     private NoteRepository noteRepository;
+
     @Before
     public void setUp() {
 // Очищаем базу данных перед каждым тестом
         noteRepository.deleteAll();
     }
+
     @Test
     public void getAllNotesIntegrationTest() {
         Note note = new Note();
